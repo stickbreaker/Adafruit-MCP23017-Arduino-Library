@@ -18,4 +18,3 @@ To download. click the DOWNLOADS button in the top right corner, rename the unco
 
 Place the Adafruit_MCP23017 library folder your <arduinosketchfolder>/libraries/ folder. You may need to create the libraries subfolder if its your first library. Restart the IDE.
 
-https://github.com/stickbreaker/Adafruit-MCP23017-Arduino-Library.git

@@ -68,6 +68,9 @@ void Adafruit_MCP23017::writeRegister(uint8_t regAddr, uint8_t regValue){
 	_Wire->write(regAddr);
 	_Wire->write(regValue);
 	_Wire->endTransmission();
+    if(_Wire->lastError() != 0){
+        log_e("failed(0x%x) reg(0x%x)=%d error=%d(%s)\n",MCP23017_ADDRESS | i2caddr, regaddr,regvalue,_Wire->lastError(),_Wire->getErrorText(_Wire->lastError()));
+    }
 }
 
 
@@ -94,10 +97,7 @@ void Adafruit_MCP23017::updateRegisterBit(uint8_t pin, uint8_t pValue, uint8_t p
  * Initializes the MCP23017 given its HW selected address, see datasheet for Address selection.
  */
 void Adafruit_MCP23017::begin(uint8_t addr, TwoWire * xWire) {
-	if (addr > 7) {
-		addr = 7;
-	}
-	i2caddr = addr;
+    i2caddr = addr & 0x7; //restrict, but allow 0x20 .. 0x27 or 0x0 .. 0x7
     _Wire = xWire;
 	_Wire->begin();
 
