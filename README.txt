@@ -1,3 +1,7 @@
+Forked 31JUL2019
+Modified for error reporting on ESP32
+Modified to support ESP32's Multiple i2c hardware
+
 This is a library for the MCP23017 I2c Port Expander
  
 These chips use I2C to communicate, 2 pins required to interface

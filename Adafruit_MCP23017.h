@@ -30,6 +30,7 @@
 
 class Adafruit_MCP23017 {
 public:
+  void begin(uint8_t addr, TwoWire * xWire);
   void begin(uint8_t addr);
   void begin(void);
 
@@ -49,7 +50,7 @@ public:
 
  private:
   uint8_t i2caddr;
-
+  TwoWire * _Wire;
   uint8_t bitForPin(uint8_t pin);
   uint8_t regForPin(uint8_t pin, uint8_t portAaddr, uint8_t portBaddr);
 
