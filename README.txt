@@ -17,3 +17,5 @@ All text above must be included in any redistribution
 To download. click the DOWNLOADS button in the top right corner, rename the uncompressed folder Adafruit_MCP23017. Check that the Adafruit_MCP23017 folder contains Adafruit_MCP23017.cpp and Adafruit_MCP23017.h
 
 Place the Adafruit_MCP23017 library folder your <arduinosketchfolder>/libraries/ folder. You may need to create the libraries subfolder if its your first library. Restart the IDE.
+
+https://github.com/stickbreaker/Adafruit-MCP23017-Arduino-Library.git
